@@ -6,8 +6,26 @@ use Illuminate\Support\ServiceProvider;
 use NeputerTech\GetpayGateway\Components\GetpayScripts;
 use NeputerTech\GetpayGateway\Services\GetpayService;
 
+/**
+ * Getpay Gateway Service Provider
+ * 
+ * Laravel service provider that bootstraps the Getpay payment gateway package.
+ * Handles registration of services, publishing of config files and views,
+ * loading of routes, and registration of Blade components.
+ * 
+ * @package NeputerTech\GetpayGateway
+ * @author Nitish Raj Uprety <nitishuprety@neputer.com>
+ */
 class GetpayServiceProvider extends ServiceProvider
 {
+    /**
+     * Bootstrap the Getpay services
+     * 
+     * Publishes configuration files and views, loads view components,
+     * and registers routes for the Getpay payment gateway.
+     * 
+     * @return void
+     */
     public function boot(): void
     {
         $this->publishes([
@@ -26,6 +44,14 @@ class GetpayServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
     }
 
+    /**
+     * Register the Getpay services
+     * 
+     * Registers the GetpayService as a singleton in the Laravel service container
+     * and merges the package configuration with the application configuration.
+     * 
+     * @return void
+     */
     public function register(): void
     {
         $this->app->singleton('getpay', function ($app) {
