@@ -6,4 +6,5 @@ return [
     'ins_key' => env('GETPAY_INS_KEY'),
     'base_url' => env('GETPAY_BASE_URL'),
     'bundle_url' => env('GETPAY_BUNDLE_URL'),
+    'merchant_url' => env('GETPAY_MERCHANT_URL'),
 ];

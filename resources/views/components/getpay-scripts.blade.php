@@ -8,7 +8,7 @@
             insKey: "{{ config('getpay.ins_key') }}",
             oprKey: "{{ config('getpay.opr_key') }}",
             clientRequestId: "{{ $refID }}",
-            websiteDomain: "{{ url('/') }}",
+            websiteDomain: "{{ config('getpay.merchant_url') }}",
             callbackUrl: {
                 successUrl: "{{ $callbackUrl }}",
                 failUrl: "{{ $failUrl }}",
